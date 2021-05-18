@@ -1,0 +1,40 @@
+<h1>Exercice 1 : Bonjour</h1>
+
+<h1 [style.font-size]="taille" [style.font-family]="selected" [style.text-align]="alignement">Bonjour {{nom | uppercase}} !</h1>
+
+
+
+<div>
+    <label for="name">Votre nom ici : </label>
+    <input id="name" [(ngModel)]="nom" placeholder="Votre nom">
+    <br>
+    <br>
+    <label for="size">Votre taille ici : </label>
+    <input id="size" [(ngModel)]="taille" placeholder="La taille de votre police">
+</div>
+
+<br>
+
+
+<div>
+    <mat-form-field appearance="fill">
+        <mat-label>Choisir une police</mat-label>
+        <mat-select [(value)]="selected">
+            <mat-option value="Times">Times</mat-option>
+            <mat-option value="Arial">Arial</mat-option>
+            <mat-option value="Helvetica">Helvetica</mat-option>
+            <mat-option value="Impact">Impact</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
+
+<div>
+
+    <mat-radio-group aria-label="Select an option" [(ngModel)]="alignement">
+        <mat-radio-button value="left">Gauche</mat-radio-button>
+        <mat-radio-button value="center">Centre</mat-radio-button>
+        <mat-radio-button value="right">Droite</mat-radio-button>
+    </mat-radio-group>
+
+</div>

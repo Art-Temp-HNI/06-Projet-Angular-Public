@@ -1,0 +1,60 @@
+<h1>Exercice 2 : Calculatrice</h1>
+
+<div>
+    <label for="number1">Votre premier nombre ici : </label>
+    <input id="number1" [(ngModel)]="number1" placeholder="Votre premier nombre">
+</div>
+
+<br>
+
+<div>
+    <mat-form-field appearance="fill">
+        <mat-label>Choisir un opérateur</mat-label>
+        <mat-select [(value)]="operator">
+            <mat-option value="+">+</mat-option>
+            <mat-option value="-">-</mat-option>
+            <mat-option value="*">*</mat-option>
+            <mat-option value="/">/</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
+<br>
+
+<div>
+    <label for="number2">Votre second nombre ici : </label>
+    <input id="number2" [(ngModel)]="number2" placeholder="Votre second nombre">
+</div>
+
+<br>
+
+<div>
+    <button mat-raised-button (click)="calcul()">Calculer</button>
+</div>
+
+<br>
+
+<div>
+    <label for="result">Votre résulat ici : </label>
+    <input id="result" [(ngModel)]="result" placeholder="Votre résultat" disabled>
+</div>
+
+<br>
+
+<div>
+    <p>Historique des opérations : </p>
+
+
+    <mat-selection-list #histo [multiple]="false">
+        <mat-list-option *ngFor="let op of historique" [value]="op" (click)="deleteList(op)">
+            Heure de l'opération :
+            {{op.heure}}
+            Calcul demandé :
+            {{op.calcul}}
+            Résultat obtenu :
+            {{op.resultat}}
+        </mat-list-option>
+    </mat-selection-list>
+
+
+</div>
