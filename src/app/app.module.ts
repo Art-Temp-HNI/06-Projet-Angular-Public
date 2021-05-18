@@ -17,6 +17,8 @@ import { Exo1Component } from './exo1/exo1.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { Exo2Component } from './exo2/exo2.component';
 import { Exo3Component } from './exo3/exo3.component';
+import { TransrouteComponent } from './transroute/transroute.component';
+import { TranslistComponent } from './translist/translist.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { Exo3Component } from './exo3/exo3.component';
     AppComponent,
     Exo1Component,
     Exo2Component,
-    Exo3Component
+    Exo3Component,
+    TransrouteComponent,
+    TranslistComponent
   ],
   imports: [
     BrowserModule,

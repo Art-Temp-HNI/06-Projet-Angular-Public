@@ -1,0 +1,23 @@
+<div>
+    <p>La liste de vos Transactions JSON : </p>
+
+
+    <mat-selection-list #transactionjson [multiple]="false">
+        <mat-list-option *ngFor="let tr of products" [value]="tr">
+            <a routerLink="trans/{{tr.id}}">
+                Id :
+                {{tr.id}}
+                . Amount :
+                {{tr.amount}}
+                . Balance :
+                {{tr.balance}}
+                . Label :
+                {{tr.label}}
+                . Date :
+                {{tr.date}}
+            </a>
+        </mat-list-option>
+    </mat-selection-list>
+
+
+</div>

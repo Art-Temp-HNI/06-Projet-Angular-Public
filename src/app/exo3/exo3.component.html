@@ -1,6 +1,6 @@
 <h1>Exercice 3 : Banque</h1>
 
-<h1>Header</h1>
+<h1>La date du jour</h1>
 <p>{{now | date:'medium'}}</p>
 
 <!--
@@ -25,7 +25,7 @@
 
 
 </div>
--->
+
 
 <div>
     <p>Transactions JSON : </p>
@@ -33,16 +33,18 @@
 
     <mat-selection-list #transactionjson [multiple]="false">
         <mat-list-option *ngFor="let tr of products" [value]="tr" (click)="routeTo()">
-            Id :
-            {{tr.id}}
-            Amount :
-            {{tr.amount}}
-            Balance :
-            {{tr.balance}}
-            Label :
-            {{tr.label}}
-            Date :
-            {{tr.date}}
+            <a routerLink="trans/{{tr.id}}">
+                Id :
+                {{tr.id}}
+                Amount :
+                {{tr.amount}}
+                Balance :
+                {{tr.balance}}
+                Label :
+                {{tr.label}}
+                Date :
+                {{tr.date}}
+            </a>
         </mat-list-option>
     </mat-selection-list>
 
@@ -50,3 +52,5 @@
 </div>
 
 -->
+
+<router-outlet></router-outlet>
